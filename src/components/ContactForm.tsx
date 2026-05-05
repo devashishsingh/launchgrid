@@ -11,23 +11,10 @@ export default function ContactForm() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("sending");
-
-    try {
-      const res = await fetch("/api/users", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-
-      if (res.ok) {
-        setStatus("sent");
-        setForm({ name: "", email: "", idea: "" });
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
+    // TODO: wire to real backend (Supabase/Resend) — currently no-op.
+    await new Promise((r) => setTimeout(r, 600));
+    setStatus("sent");
+    setForm({ name: "", email: "", idea: "" });
   }
 
   return (

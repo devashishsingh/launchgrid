@@ -51,23 +51,10 @@ export default function LeadCaptureForm() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("sending");
-
-    try {
-      const res = await fetch("/api/leads", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-
-      if (res.ok) {
-        setStatus("sent");
-        setForm(initial);
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
+    // TODO: wire to real backend (Supabase/Resend) — currently no-op.
+    await new Promise((r) => setTimeout(r, 600));
+    setStatus("sent");
+    setForm(initial);
   }
 
   const inputClass =
