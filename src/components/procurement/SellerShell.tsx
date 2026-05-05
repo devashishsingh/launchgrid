@@ -30,7 +30,7 @@ export default function SellerShell({
           <h2 className="text-lg font-bold mb-2">Seller Access Required</h2>
           <p className="text-sm text-muted mb-4">
             The seller portal is available to verified marketplace vendors.
-            List your product on LaunchBox to access RFP opportunities.
+            List your product on Blyoi to access RFP opportunities.
           </p>
           <Link href="/marketplace" className="text-sm text-accent hover:underline">
             ← Back to Marketplace

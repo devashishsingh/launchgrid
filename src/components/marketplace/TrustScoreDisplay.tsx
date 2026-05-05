@@ -54,7 +54,7 @@ export function TrustScoreBreakdown({ score }: { score: TrustScore }) {
   return (
     <div className="card-3d rounded-2xl p-6 space-y-4">
       <div className="flex items-center justify-between mb-2">
-        <h3 className="font-bold text-sm">Launchbox Trust Score</h3>
+        <h3 className="font-bold text-sm">Blyoi Trust Score</h3>
         <TrustScoreBadge score={score} size="sm" />
       </div>
       <ScoreBar label="Support Quality" value={breakdown.support} />
@@ -65,7 +65,7 @@ export function TrustScoreBreakdown({ score }: { score: TrustScore }) {
       <ScoreBar label="User Reviews" value={breakdown.reviews} />
       <ScoreBar label="Complaint Ratio" value={breakdown.complaintRatio} />
       <p className="text-[10px] text-muted/60 pt-2 border-t border-white/5">
-        Score based on Launchbox verification framework. Updated after each review cycle.
+        Score based on Blyoi verification framework. Updated after each review cycle.
       </p>
     </div>
   );

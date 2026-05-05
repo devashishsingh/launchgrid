@@ -1,19 +1,37 @@
 @import "tailwindcss";
 
+/* ══════════════════ BLYOI DESIGN SYSTEM ══════════════════
+   Build Life Like You Own It
+   Brutalist Typography × Luxury Minimalism
+*/
 :root {
-  --background: #08080d;
-  --foreground: #E8ECF1;
-  --accent: #3B82F6;
-  --accent-hover: #2563EB;
-  --accent-glow: rgba(59, 130, 246, 0.15);
-  --muted: #8892A4;
-  --card: #12121a;
-  --card-hover: #181822;
-  --border: #1a1a28;
-  --border-hover: #2a2a3d;
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.06);
-  --glass-highlight: rgba(255, 255, 255, 0.08);
+  /* Brand palette */
+  --navy: #171e19;
+  --sage: #b7c6c2;
+  --cyan: #d5f4f9;
+  --soft-blue: #bbe2f5;
+  --taupe: #9f8d8b;
+  --beige: #d7c5b2;
+  --charcoal: #302b2f;
+  --fog: #fafafa;
+
+  /* Semantic — dark default */
+  --background: #171e19;
+  --foreground: #ffffff;
+  --accent: #b7c6c2;        /* Sage */
+  --accent-hover: #d5f4f9;  /* Cyan */
+  --accent-glow: rgba(183, 198, 194, 0.18);
+  --muted: #9f8d8b;         /* Taupe */
+  --card: #1c2520;
+  --card-hover: #212b25;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.14);
+  --glass-bg: rgba(255, 255, 255, 0.025);
+  --glass-border: rgba(255, 255, 255, 0.07);
+  --glass-highlight: rgba(255, 255, 255, 0.10);
+
+  /* Motion */
+  --ease-luxe: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @theme inline {
@@ -24,7 +42,16 @@
   --color-muted: var(--muted);
   --color-card: var(--card);
   --color-border: var(--border);
-  --font-sans: var(--font-geist-sans);
+  --color-navy: var(--navy);
+  --color-sage: var(--sage);
+  --color-cyan: var(--cyan);
+  --color-soft-blue: var(--soft-blue);
+  --color-taupe: var(--taupe);
+  --color-beige: var(--beige);
+  --color-charcoal: var(--charcoal);
+  --color-fog: var(--fog);
+  --font-sans: var(--font-jakarta), system-ui, sans-serif;
+  --font-display: var(--font-anton), 'Impact', sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
@@ -35,12 +62,230 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  font-weight: 400;
+  cursor: crosshair;
+}
+
+/* Re-enable normal cursor on interactive elements */
+a, button, input, textarea, select, [role="button"], label {
+  cursor: pointer;
+}
+input[type="text"], input[type="email"], input[type="tel"],
+input[type="url"], input[type="number"], input[type="search"],
+input[type="password"], textarea {
+  cursor: text;
 }
 
 ::selection {
-  background: var(--accent);
-  color: white;
+  background: var(--sage);
+  color: var(--navy);
+}
+
+/* ══════════════════ BLYOI TYPOGRAPHY ══════════════════ */
+
+.font-display {
+  font-family: var(--font-anton), 'Impact', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+
+/* Headline classes — Anton uppercase brutalist */
+.h-display {
+  font-family: var(--font-anton), 'Impact', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+  line-height: 0.9;
+  font-weight: 400;
+}
+
+/* Outline text — sage stroke, transparent fill */
+.text-outline {
+  -webkit-text-stroke: 1px var(--sage);
+  color: transparent;
+}
+.text-outline-white {
+  -webkit-text-stroke: 1px rgba(255,255,255,0.6);
+  color: transparent;
+}
+
+/* Eyebrow / micro label */
+.eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-weight: 500;
+  color: var(--taupe);
+}
+
+/* Override any default heading rendering on landing for editorial feel */
+.brutalist-headings h1,
+.brutalist-headings h2,
+.brutalist-headings h3 {
+  font-family: var(--font-anton), 'Impact', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+/* ══════════════════ BLYOI SECTIONS ══════════════════ */
+
+.section-navy { background: var(--navy); color: #fff; }
+.section-light { background: #ffffff; color: var(--navy); }
+.section-fog { background: var(--fog); color: var(--navy); }
+.section-charcoal { background: var(--charcoal); color: #fff; }
+
+.section-light .text-muted-on-light { color: var(--taupe); }
+
+/* ══════════════════ AMBIENT FLOATING ORBS ══════════════════ */
+
+.orb {
+  position: absolute;
+  width: 384px;
+  height: 384px;
+  border-radius: 9999px;
+  filter: blur(120px);
+  opacity: 0.20;
+  pointer-events: none;
+  animation: orb-float 6s ease-in-out infinite;
+}
+.orb-sage { background: var(--sage); }
+.orb-cyan { background: var(--cyan); }
+.orb-blue { background: var(--soft-blue); }
+.orb-beige { background: var(--beige); opacity: 0.15; }
+
+@keyframes orb-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* ══════════════════ MIX-BLEND NAVIGATION ══════════════════ */
+
+.mix-blend-nav {
+  mix-blend-mode: difference;
+  color: #ffffff;
+}
+.mix-blend-nav a, .mix-blend-nav button, .mix-blend-nav span {
+  color: #ffffff;
+}
+
+/* ══════════════════ HOVER REVEAL VIEWPORT ══════════════════ */
+
+.reveal-viewport {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.reveal-viewport img,
+.reveal-viewport .reveal-viewport-media {
+  transition: transform 0.7s var(--ease-luxe);
+  will-change: transform;
+}
+.reveal-viewport:hover img,
+.reveal-viewport:hover .reveal-viewport-media {
+  transform: scale(1.1);
+}
+.reveal-viewport-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(23, 30, 25, 0.6);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s var(--ease-luxe);
+}
+.reveal-viewport:hover .reveal-viewport-overlay {
+  opacity: 1;
+}
+.view-badge {
+  width: 96px;
+  height: 96px;
+  border-radius: 9999px;
+  background: #ffffff;
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-anton), 'Impact', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/* ══════════════════ LUXURY BUTTONS ══════════════════ */
+
+.btn-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.75rem;
+  border: 1px solid currentColor;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  transition: all 0.5s var(--ease-luxe);
+  background: transparent;
+  color: inherit;
+  border-radius: 0;
+}
+.btn-line:hover {
+  background: #ffffff;
+  color: var(--navy);
+  border-color: #ffffff;
+}
+.btn-line.on-light:hover {
+  background: var(--navy);
+  color: #ffffff;
+  border-color: var(--navy);
+}
+
+.btn-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-weight: 600;
+  color: var(--sage);
+  transition: color 0.4s var(--ease-luxe);
+}
+.btn-arrow .arrow {
+  display: inline-block;
+  transition: transform 0.4s var(--ease-luxe);
+}
+.btn-arrow:hover .arrow {
+  transform: translateX(8px);
+}
+
+/* Capabilities list — line prefix */
+.cap-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.4s var(--ease-luxe);
+}
+.cap-item::before {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.5s var(--ease-luxe);
+  display: block;
+}
+.cap-item:hover::before {
+  width: 64px;
 }
 
 /* ══════════════════ GLASS SYSTEM (35%) ══════════════════ */
@@ -70,74 +315,81 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Glass with accent tint */
+/* Glass with accent tint — BLYOI sage tint */
 .glass-accent {
-  background: linear-gradient(165deg, rgba(59, 130, 246, 0.06) 0%, rgba(59, 130, 246, 0.02) 100%);
+  background: linear-gradient(165deg, rgba(183, 198, 194, 0.06) 0%, rgba(213, 244, 249, 0.02) 100%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(59, 130, 246, 0.12);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(183, 198, 194, 0.15);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(183, 198, 194, 0.05);
 }
 
 /* ══════════════════ SKEUOMORPHIC (25%) — Reserved for key interactions ══════════════════ */
 
-/* Physical button — raised, pressable (KEEP — best skeuo element) */
+/* Primary skeuo button → BLYOI: line-button white border, fills white on hover */
 .skeuo-btn {
-  background: linear-gradient(180deg, #4a8cf7 0%, #2563EB 50%, #1d4ed8 100%);
-  border: 1px solid #1d4ed8;
-  border-top-color: #60a5fa;
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.15) inset,
-    0 4px 8px rgba(0, 0, 0, 0.4),
-    0 2px 4px rgba(0, 0, 0, 0.3);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-  transition: all 0.15s ease;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 0.875rem 1.75rem;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  border-radius: 0 !important;
+  box-shadow: none;
+  text-shadow: none;
+  transition: all 0.5s var(--ease-luxe);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .skeuo-btn:hover {
-  background: linear-gradient(180deg, #5b9af8 0%, #3b82f6 50%, #2563eb 100%);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.2) inset,
-    0 6px 12px rgba(0, 0, 0, 0.5),
-    0 2px 4px rgba(0, 0, 0, 0.3);
-  transform: translateY(-1px);
+  background: #ffffff;
+  color: var(--navy);
+  box-shadow: none;
+  transform: none;
 }
 
 .skeuo-btn:active {
-  background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%);
-  border-top-color: #1d4ed8;
-  box-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.4) inset,
-    0 1px 2px rgba(0, 0, 0, 0.2);
-  transform: translateY(1px);
+  background: var(--sage);
+  color: var(--navy);
+  border-color: var(--sage);
+  box-shadow: none;
+  transform: none;
 }
 
-/* Secondary physical button */
+/* Secondary → sage outline */
 .skeuo-btn-secondary {
-  background: linear-gradient(180deg, #1e1e2e 0%, #161622 50%, #111118 100%);
-  border: 1px solid #2a2a3d;
-  border-top-color: #35354a;
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.04) inset,
-    0 4px 8px rgba(0, 0, 0, 0.3),
-    0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: all 0.15s ease;
+  background: transparent;
+  color: var(--sage);
+  border: 1px solid var(--sage);
+  padding: 0.875rem 1.75rem;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  border-radius: 0 !important;
+  box-shadow: none;
+  transition: all 0.5s var(--ease-luxe);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .skeuo-btn-secondary:hover {
-  background: linear-gradient(180deg, #252535 0%, #1e1e2e 50%, #161622 100%);
-  border-color: var(--accent);
-  border-top-color: #60a5fa;
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.06) inset,
-    0 6px 12px rgba(0, 0, 0, 0.4),
-    0 0 20px rgba(59, 130, 246, 0.08);
-  transform: translateY(-1px);
+  background: var(--sage);
+  color: var(--navy);
+  box-shadow: none;
+  transform: none;
 }
 
 .skeuo-btn-secondary:active {
-  transform: translateY(1px);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  transform: none;
+  box-shadow: none;
 }
 
 /* Raised panel — ONLY for Hero stats, TrustBadge seal, HowItWorks */
@@ -236,42 +488,48 @@ body {
 
 /* ══════════════════ TYPOGRAPHY ══════════════════ */
 
+/* BLYOI gradient text — sage → cyan, used for accent words */
 .gradient-text {
-  background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 40%, #818CF8 100%);
+  background: linear-gradient(135deg, var(--sage) 0%, var(--cyan) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-family: inherit;
 }
 
 .gradient-text-warm {
-  background: linear-gradient(135deg, #F8FAFC 0%, #CBD5E1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
 }
 
-/* Section label — clean pill */
+/* Section label — BLYOI: micro uppercase eyebrow with thin line */
 .section-label {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 9999px;
-  padding: 0.375rem 1rem;
-  font-size: 0.6875rem;
+  gap: 0.75rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.25em;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--sage);
+}
+.section-label::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: currentColor;
 }
 
 /* ══════════════════ LAYOUT HELPERS ══════════════════ */
 
 .mesh-gradient {
   background:
-    radial-gradient(ellipse 600px 500px at 20% 50%, rgba(59, 130, 246, 0.06) 0%, transparent 70%),
-    radial-gradient(ellipse 500px 400px at 80% 20%, rgba(99, 102, 241, 0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 600px 500px at 20% 50%, rgba(183, 198, 194, 0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 400px at 80% 20%, rgba(213, 244, 249, 0.05) 0%, transparent 70%),
     var(--background);
 }
 

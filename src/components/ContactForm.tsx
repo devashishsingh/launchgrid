@@ -35,7 +35,7 @@ export default function ContactForm() {
       <div className="max-w-xl mx-auto">
         <div className="text-center mb-8">
           <span className="section-label mb-4">Get Started</span>
-          <h2 className="text-2xl sm:text-3xl font-bold leading-tight">
+          <h2 className="font-display text-5xl sm:text-7xl md:text-8xl leading-[0.9] tracking-tight">
             Let&apos;s turn your code into <span className="gradient-text">revenue.</span>
           </h2>
           <p className="text-sm text-muted mt-2">Takes 2 minutes. No commitment. We respond within 24 hours.</p>
