@@ -16,7 +16,7 @@ export default function WhatWeAre() {
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8">
           <span className="section-label mb-4">Clarity</span>
-          <h2 className="font-display text-5xl sm:text-7xl md:text-8xl leading-[0.9] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-bold leading-tight">
             Crystal clear on <span className="gradient-text">what this is.</span>
           </h2>
         </div>

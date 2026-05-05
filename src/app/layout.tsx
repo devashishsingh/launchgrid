@@ -1,19 +1,10 @@
 import type { Metadata } from "next";
-import { Anton, Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const anton = Anton({
-  variable: "--font-anton",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-});
-
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
-  subsets: ["latin"],
-  weight: ["300", "400", "600", "700"],
-  display: "swap",
 });
 
 const geistMono = Geist_Mono({
@@ -22,17 +13,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Blyoi — Build Life Like You Own It",
+  title: "Launchbox — Sell Your Digital Product Without a Company",
   description:
-    "Blyoi gives independent creators the registered company, legal agreements, invoicing, payment rails and trust layer to sell software without owning a company. Build life like you own it.",
+    "Launch SaaS platforms, tools, utilities, and any digital product under our registered company. No legal hassle. No compliance burden. No upfront risk.",
   keywords: [
-    "Blyoi",
-    "build life like you own it",
     "sell digital products",
     "SaaS platform",
     "no company needed",
     "indie developer",
-    "creator economy",
+    "digital tools",
     "freelancer invoicing",
   ],
 };
@@ -45,7 +34,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${anton.variable} ${jakarta.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       style={{ colorScheme: "dark" }}
     >
       <body suppressHydrationWarning className="min-h-full flex flex-col bg-background text-foreground noise">{children}</body>

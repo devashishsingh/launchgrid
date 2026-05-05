@@ -12,7 +12,7 @@ export default function Audience() {
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8">
           <span className="section-label mb-4">Who This Is For</span>
-          <h2 className="font-display text-5xl sm:text-7xl md:text-8xl leading-[0.9] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-bold leading-tight">
             If you build it, <span className="gradient-text">we&apos;ll help you sell it.</span>
           </h2>
         </div>

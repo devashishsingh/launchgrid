@@ -1,7 +1,7 @@
 import type { TrustBadge } from "@/lib/marketplace-data";
 
 const badgeConfig: Record<TrustBadge, { label: string; icon: string; color: string }> = {
-  launchdock_verified: { label: "Blyoi Verified", icon: "✅", color: "bg-accent/10 text-accent border-accent/20" },
+  launchdock_verified: { label: "Launchbox Verified", icon: "✅", color: "bg-accent/10 text-accent border-accent/20" },
   tested: { label: "Tested", icon: "🧪", color: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20" },
   legal_ready: { label: "Legal Ready", icon: "⚖️", color: "bg-blue-500/10 text-blue-400 border-blue-500/20" },
   security_checked: { label: "Security Checked", icon: "🔒", color: "bg-purple-500/10 text-purple-400 border-purple-500/20" },

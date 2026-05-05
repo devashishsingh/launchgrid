@@ -8,7 +8,7 @@ export default function FinalCTA() {
               <span className="skeuo-led" />
               Ready?
             </span>
-            <h2 className="font-display text-6xl sm:text-8xl md:text-9xl leading-[0.85] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-bold leading-tight">
               Stop planning.
               <br />
               <span className="gradient-text">Start selling.</span>

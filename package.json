@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "seed:readiness": "tsx scripts/seed-readiness.ts",
-    "readiness:purge": "node -e \"require('fs').rmSync('data/readiness',{recursive:true,force:true});console.log('purged data/readiness')\""
+    "lint": "eslint"
   },
   "dependencies": {
     "next": "16.2.2",
@@ -23,7 +21,6 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.2",
     "tailwindcss": "^4",
-    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }

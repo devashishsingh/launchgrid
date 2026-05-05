@@ -1,8 +1,8 @@
 const features = [
-  { icon: "📝", title: "Sign with authority", desc: "Execute MSAs, NDAs, and SOWs under a registered Indian entity — enforceable on day one." },
-  { icon: "🧾", title: "Invoice with compliance", desc: "GST-compliant invoices, ledgers, and statutory paper trails issued from our books." },
-  { icon: "💳", title: "Collect through real rails", desc: "Receive payments through audited banking channels — no workarounds, no grey zones." },
-  { icon: "🔓", title: "Own everything that matters", desc: "Your code, your IP, your customer relationships — assigned to you in writing, always." },
+  { icon: "📝", title: "Sign Contracts", desc: "Legal agreements under a registered entity." },
+  { icon: "🧾", title: "Send Invoices", desc: "GST-compliant invoices from day one." },
+  { icon: "💳", title: "Accept Payments", desc: "Proper banking channels, no grey areas." },
+  { icon: "🔓", title: "Keep Everything", desc: "Your code, IP, clients — always yours." },
 ];
 
 export default function Solution() {
@@ -14,7 +14,7 @@ export default function Solution() {
             <span className="text-green-400 text-xs">✅</span>
             The Solution
           </span>
-          <h2 className="font-display text-5xl sm:text-7xl md:text-8xl leading-[0.9] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-bold leading-tight">
             Operate like a company. <span className="gradient-text">Without becoming one.</span>
           </h2>
           <p className="text-sm text-muted mt-2 max-w-md mx-auto">
