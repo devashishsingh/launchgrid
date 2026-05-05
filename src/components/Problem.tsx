@@ -1,12 +1,12 @@
 const problems = [
-  { icon: "🏢", title: "No legal entity", desc: "Without a registered company, you can't sign contracts, issue invoices, or close enterprise deals." },
-  { icon: "🔒", title: "Compliance overhead", desc: "Registration, filings, and statutory obligations stall builders before the first line of revenue." },
-  { icon: "🧾", title: "No GST invoicing", desc: "B2B buyers and procurement desks won't transact without compliant tax invoices." },
-  { icon: "🛡️", title: "Missing trust layer", desc: "Buyers underwrite the entity, not the individual. Without one, conversion collapses." },
-  { icon: "💳", title: "No payment infrastructure", desc: "No clean rails to collect, reconcile, or split revenue across stakeholders." },
-  { icon: "📞", title: "No support framework", desc: "No formal complaint channel, refund process, or SLA — a deal-breaker in regulated buying." },
-  { icon: "📊", title: "No back-office", desc: "You're stretched across sales, support, finance, and legal — none of it your craft." },
-  { icon: "⚠️", title: "Opaque payout structure", desc: "Even when customers pay, reconciliation, taxes, and disbursement remain unclear." },
+  { icon: "🏢", title: "No company", desc: "Can't legally sell, sign contracts, or issue invoices." },
+  { icon: "🔒", title: "Legal fear", desc: "Registration, compliance, and tax filing stop you before you start." },
+  { icon: "🧾", title: "No GST/invoicing", desc: "No proper invoices kills B2B deals and enterprise trust." },
+  { icon: "🛡️", title: "No trust layer", desc: "Customers need a real company behind the product." },
+  { icon: "💳", title: "No payment rails", desc: "No clean way to accept, track, or split revenue." },
+  { icon: "📞", title: "No support framework", desc: "No complaint channel, refund process, or SLA." },
+  { icon: "📊", title: "No back-office", desc: "You're wearing every hat—sales, support, finance, legal." },
+  { icon: "⚠️", title: "No payout structure", desc: "Even when customers pay, the money path is unclear." },
 ];
 
 export default function Problem() {
@@ -18,7 +18,7 @@ export default function Problem() {
             <span className="text-red-400 text-xs">⛔</span>
             The Problem
           </span>
-          <h2 className="font-display text-5xl sm:text-7xl md:text-8xl leading-[0.9] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-bold leading-tight">
             Why great software <span className="gradient-text">never reaches customers.</span>
           </h2>
           <p className="text-sm text-muted mt-2 max-w-md mx-auto">

@@ -1,66 +1,52 @@
-/**
- * BLYOI — Premium brand mark.
- * Concept: A perfect disc (your life / your world) framed by a thin sage ring.
- * A bold "B" is carved into the disc as architectural negative space — the spine
- * is unbroken, the two bowls are open arcs. A single cyan dot ("your stake")
- * sits like punctuation in the upper-right, marking the moment of ownership.
- *
- * Editorial, geometric, never-seen-before. Reads as a B at any scale.
- */
-export default function Logo({
-  size = 36,
-  className = "",
-  variant = "dark",
-}: {
-  size?: number;
-  className?: string;
-  /** "dark" → on navy bg (sage mark). "light" → on white bg (navy mark). "mono" → currentColor. */
-  variant?: "dark" | "light" | "mono";
-}) {
-  const stroke =
-    variant === "light" ? "#171e19" : variant === "mono" ? "currentColor" : "#b7c6c2";
-  const fill =
-    variant === "light" ? "#ffffff" : variant === "mono" ? "transparent" : "#171e19";
-  const dot =
-    variant === "light" ? "#171e19" : variant === "mono" ? "currentColor" : "#d5f4f9";
-
+export default function Logo({ size = 32, className = "" }: { size?: number; className?: string }) {
   return (
     <svg
       width={size}
       height={size}
-      viewBox="0 0 64 64"
+      viewBox="0 0 48 48"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
-      aria-label="Blyoi"
-      role="img"
     >
-      {/* Outer disc — the world / your life */}
-      <circle cx="32" cy="32" r="29" fill={fill} stroke={stroke} strokeWidth="2" />
+      <defs>
+        <linearGradient id="box-face" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#3B82F6" />
+          <stop offset="100%" stopColor="#6366F1" />
+        </linearGradient>
+        <linearGradient id="box-lid" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#60A5FA" />
+          <stop offset="100%" stopColor="#818CF8" />
+        </linearGradient>
+        <linearGradient id="arrow-glow" x1="50%" y1="100%" x2="50%" y2="0%">
+          <stop offset="0%" stopColor="#3B82F6" />
+          <stop offset="100%" stopColor="#93C5FD" />
+        </linearGradient>
+      </defs>
 
-      {/* "B" spine — unbroken vertical, signalling resolve */}
-      <rect x="20" y="14" width="3" height="36" fill={stroke} />
+      {/* Box body */}
+      <rect x="8" y="22" width="32" height="20" rx="3" fill="url(#box-face)" opacity="0.9" />
 
-      {/* Upper bowl */}
+      {/* Box lid — open */}
       <path
-        d="M23 15.5 H33 A7.5 7.5 0 0 1 33 30.5 H23"
-        fill="none"
-        stroke={stroke}
-        strokeWidth="3"
-        strokeLinecap="square"
+        d="M6 22L24 14L42 22H6Z"
+        fill="url(#box-lid)"
+        opacity="0.95"
       />
 
-      {/* Lower bowl — slightly larger for editorial asymmetry */}
+      {/* Lid highlight */}
+      <line x1="10" y1="21.5" x2="38" y2="21.5" stroke="white" strokeWidth="0.5" opacity="0.2" />
+
+      {/* Launch arrow bursting out */}
       <path
-        d="M23 30.5 H36 A9 9 0 0 1 36 48.5 H23"
-        fill="none"
-        stroke={stroke}
-        strokeWidth="3"
-        strokeLinecap="square"
+        d="M24 4L28 12H25V18H23V12H20L24 4Z"
+        fill="url(#arrow-glow)"
       />
 
-      {/* Ownership dot — your stake, the punctuation closing the statement */}
-      <circle cx="49.5" cy="16.5" r="2.5" fill={dot} />
+      {/* Arrow tip sparkle */}
+      <circle cx="24" cy="5" r="1" fill="white" opacity="0.7" />
+
+      {/* Box clasp */}
+      <rect x="21" y="20" width="6" height="4" rx="1" fill="white" opacity="0.15" />
     </svg>
   );
 }

@@ -1,73 +1,80 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden section-navy flex flex-col">
-      {/* Ambient floating orbs */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="orb orb-sage" style={{ top: "12%", left: "-6%" }} />
-        <div
-          className="orb orb-blue"
-          style={{ bottom: "10%", right: "-4%", animationDelay: "2s" }}
-        />
-        <div
-          className="orb orb-cyan"
-          style={{ top: "55%", left: "40%", animationDelay: "4s", opacity: 0.12 }}
-        />
+    <section className="min-h-[80vh] flex items-center justify-center px-6 pt-20 mesh-gradient relative overflow-hidden">
+      {/* Subtle ambient glow */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-1/4 left-[10%] w-96 h-96 bg-blue-500/[0.06] rounded-full blur-[100px] float-3d" />
+        <div className="absolute bottom-1/4 right-[8%] w-80 h-80 bg-indigo-500/[0.04] rounded-full blur-[100px] float-3d" style={{ animationDelay: "3s" }} />
       </div>
 
-      {/* Top eyebrow row — sits below the fixed nav */}
-      <div className="relative z-10 px-8 md:px-12 pt-32 md:pt-40 flex justify-between items-center">
-        <span className="eyebrow text-taupe">
-          <span className="inline-block w-2 h-2 rounded-full bg-sage mr-3 align-middle animate-pulse" />
-          Independent. Incorporated. Indistinguishable.
-        </span>
-        <span className="hidden md:inline-block eyebrow text-taupe">
-          ©  Blyoi · MMXXVI
-        </span>
-      </div>
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        {/* Live status badge — glass pill */}
+        <div className="inline-flex items-center gap-2.5 glass-subtle rounded-full px-5 py-2 mb-6">
+          <span className="skeuo-led" />
+          <span className="text-xs font-semibold tracking-wide text-foreground/80 uppercase">Early Access — Now Open</span>
+        </div>
 
-      {/* Main headline block — flush left, editorial */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center px-6 md:px-12 py-16 md:py-24">
-        <h1
-          className="h-display text-white"
-          style={{
-            fontSize: "clamp(3.25rem, 14.5vw, 18rem)",
-            lineHeight: 0.85,
-          }}
-        >
-          <span className="block">Build Life</span>
-          <span className="block text-outline">Like You</span>
-          <span className="block">Own It.</span>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.12]">
+          <span className="gradient-text-warm">Sell your software</span>
+          <br />
+          <span className="gradient-text">without a company.</span>
         </h1>
-      </div>
 
-      {/* Bottom row — taupe lede left, circular arrow right */}
-      <div className="relative z-10 px-8 md:px-12 pb-12 md:pb-16 flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
-        <p
-          className="text-taupe text-sm md:text-[15px] leading-relaxed font-light"
-          style={{ maxWidth: "340px" }}
-        >
-          Ship your software under a real company — without becoming one.
-          We carry the legal weight, the invoicing rails and the trust badge
-          buyers demand. You keep every line of code, every rupee of IP,
-          and the freedom to walk the moment it stops serving you.
+        <p className="mt-4 text-sm sm:text-base text-muted max-w-lg mx-auto leading-relaxed">
+          We provide the registered company, legal agreements, invoicing, payment collection &amp; payouts.
+          You keep 100% of your IP and walk away anytime.
         </p>
 
-        <a
-          href="#lead-capture"
-          aria-label="Begin"
-          className="group relative shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-full border border-white/40 flex items-center justify-center transition-all duration-700 hover:border-cyan hover:bg-white/5"
-          style={{ transitionTimingFunction: "cubic-bezier(0.16,1,0.3,1)" }}
-        >
-          <svg
-            className="w-5 h-5 md:w-6 md:h-6 text-white transition-transform duration-700 animate-bounce"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={1.5}
-          >
-            <path strokeLinecap="square" strokeLinejoin="miter" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </a>
+        {/* CTA buttons — physical raised buttons (skeuo) */}
+        <div className="mt-7 flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="#lead-capture" className="skeuo-btn text-white px-8 py-3 rounded-xl text-sm font-semibold">
+            Apply to Launch →
+          </a>
+          <a href="#contact" className="skeuo-btn-secondary text-foreground px-8 py-3 rounded-xl text-sm font-medium">
+            Book a Discovery Call
+          </a>
+        </div>
+
+        {/* Dashboard-style stats panel — skeuo raised with inset gauges */}
+        <div className="mt-10 skeuo-raised skeuo-stitched rounded-2xl p-5 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.06]">
+            <div className="text-center px-4">
+              <div className="skeuo-inset rounded-lg px-3 py-2 mb-2 inline-block">
+                <p className="text-2xl sm:text-3xl font-bold gradient-text font-mono">₹0</p>
+              </div>
+              <p className="text-[11px] text-muted uppercase tracking-wider font-medium">Upfront Cost</p>
+            </div>
+            <div className="text-center px-4">
+              <div className="skeuo-inset rounded-lg px-3 py-2 mb-2 inline-block">
+                <p className="text-2xl sm:text-3xl font-bold gradient-text font-mono">100%</p>
+              </div>
+              <p className="text-[11px] text-muted uppercase tracking-wider font-medium">Your IP</p>
+            </div>
+            <div className="text-center px-4">
+              <div className="skeuo-inset rounded-lg px-3 py-2 mb-2 inline-block">
+                <p className="text-2xl sm:text-3xl font-bold gradient-text font-mono">Day 1</p>
+              </div>
+              <p className="text-[11px] text-muted uppercase tracking-wider font-medium">Start Selling</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Trust chips — glass subtle */}
+        <div className="mt-6 flex flex-wrap justify-center gap-2">
+          {[
+            { icon: "📜", label: "Legal Agreements" },
+            { icon: "🧾", label: "GST Invoicing" },
+            { icon: "💰", label: "Payout Tracking" },
+            { icon: "🛡️", label: "Trust Badge" },
+            { icon: "📊", label: "Creator Dashboard" },
+            { icon: "🎧", label: "Support System" },
+          ].map((chip) => (
+            <span key={chip.label} className="glass-subtle rounded-full px-3 py-1 text-[11px] text-muted inline-flex items-center gap-1.5">
+              <span>{chip.icon}</span>
+              {chip.label}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );
