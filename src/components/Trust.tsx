@@ -10,7 +10,7 @@ export default function Trust() {
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8">
           <span className="section-label mb-4">Trust</span>
-          <h2 className="text-2xl sm:text-3xl font-bold leading-tight">
+          <h2 className="font-display text-5xl sm:text-7xl md:text-8xl leading-[0.9] tracking-tight">
             No fine print. <span className="gradient-text">No gotchas.</span>
           </h2>
           <p className="text-sm text-muted mt-2">Built on radical transparency.</p>

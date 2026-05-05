@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 const WHATSAPP_NUMBER = "919868638885";
-const WHATSAPP_MESSAGE = encodeURIComponent("Hi! I'm interested in launching my digital product through Launchbox.");
+const WHATSAPP_MESSAGE = encodeURIComponent("Hi! I'm interested in launching my digital product through Blyoi.");
 
 export default function StickyCTA() {
   const [visible, setVisible] = useState(false);
