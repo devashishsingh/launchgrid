@@ -4,7 +4,7 @@ export default function Emotional() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8">
           <span className="section-label mb-4">Zero Downside</span>
-          <h2 className="text-2xl sm:text-3xl font-bold leading-tight">
+          <h2 className="font-display text-5xl sm:text-7xl md:text-8xl leading-[0.9] tracking-tight">
             Heads you win. <span className="gradient-text">Tails you walk away clean.</span>
           </h2>
         </div>

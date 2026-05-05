@@ -13,8 +13,8 @@ export default function TrustBadge() {
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8">
           <span className="section-label mb-4">Trust Badge</span>
-          <h2 className="text-2xl sm:text-3xl font-bold leading-tight">
-            A product of <span className="gradient-text">Launchbox.</span>
+          <h2 className="font-display text-5xl sm:text-7xl md:text-8xl leading-[0.9] tracking-tight">
+            A product of <span className="gradient-text">Blyoi.</span>
           </h2>
         </div>
 
@@ -28,8 +28,8 @@ export default function TrustBadge() {
               Verified Product
             </p>
             <p className="text-base font-bold">
-              <span className="gradient-text">Launch</span>
-              <span className="text-foreground">box</span>
+              <span className="gradient-text">Bly</span>
+              <span className="text-foreground">oi</span>
               <span className="text-muted ml-1.5 text-xs font-normal">Certified</span>
             </p>
             <p className="text-[11px] text-muted mt-2">

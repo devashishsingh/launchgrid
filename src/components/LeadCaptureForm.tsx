@@ -78,7 +78,7 @@ export default function LeadCaptureForm() {
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-8">
           <span className="section-label mb-4">Apply to Launch</span>
-          <h2 className="text-2xl sm:text-3xl font-bold leading-tight">
+          <h2 className="font-display text-5xl sm:text-7xl md:text-8xl leading-[0.9] tracking-tight">
             Let&apos;s turn your code into <span className="gradient-text">revenue.</span>
           </h2>
           <p className="text-sm text-muted mt-2">Takes 3 minutes. No commitment. We respond within 24 hours.</p>
@@ -290,7 +290,7 @@ export default function LeadCaptureForm() {
                   className="mt-0.5 w-5 h-5 min-w-5 rounded border-border bg-card text-accent focus:ring-accent/20"
                 />
                 <span className="text-sm text-muted group-hover:text-foreground transition-colors">
-                  I acknowledge the Launchbox creator terms and agreement requirements *
+                  I acknowledge the Blyoi creator terms and agreement requirements *
                 </span>
               </label>
             </div>
@@ -300,7 +300,7 @@ export default function LeadCaptureForm() {
               disabled={status === "sending"}
               className="w-full skeuo-btn disabled:opacity-60 text-white py-4 rounded-xl text-base font-semibold transition-all"
             >
-              {status === "sending" ? "Submitting..." : "Apply to Launchbox"}
+              {status === "sending" ? "Submitting..." : "Apply to Blyoi"}
             </button>
 
             {status === "error" && (
