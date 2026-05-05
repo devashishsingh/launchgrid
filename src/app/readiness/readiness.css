@@ -1,0 +1,76 @@
+/* BLOYI Readiness — small additions to the existing design system. */
+
+.bloyi-mesh {
+  background:
+    radial-gradient(ellipse 700px 500px at 15% 10%, rgba(59, 130, 246, 0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 600px 400px at 85% 80%, rgba(168, 85, 247, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 500px 300px at 60% 40%, rgba(34, 211, 238, 0.05) 0%, transparent 60%),
+    #08080d;
+}
+
+.bloyi-locked {
+  position: relative;
+  filter: grayscale(0.7) brightness(0.6);
+  pointer-events: none;
+}
+.bloyi-locked::after {
+  content: "🔒";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  filter: none;
+}
+
+.bloyi-medal {
+  background: conic-gradient(from 230deg, #f5d77a, #fff7d1, #c98e2a, #f5d77a, #c98e2a);
+  box-shadow:
+    0 0 0 4px #1a1a28,
+    0 0 0 6px #2a2a3d,
+    0 16px 48px rgba(245, 215, 122, 0.18),
+    inset 0 2px 8px rgba(255, 255, 255, 0.4),
+    inset 0 -4px 12px rgba(0, 0, 0, 0.4);
+  animation: bloyi-medal-spin 18s linear infinite;
+}
+.bloyi-medal-platinum { background: conic-gradient(from 230deg, #e6f3ff, #ffffff, #93c5fd, #c7d2fe, #e6f3ff); box-shadow: 0 0 0 4px #1a1a28, 0 0 0 6px #2a2a3d, 0 16px 48px rgba(147, 197, 253, 0.25), inset 0 2px 8px rgba(255, 255, 255, 0.5), inset 0 -4px 12px rgba(0, 0, 0, 0.4); }
+.bloyi-medal-silver { background: conic-gradient(from 230deg, #c0c8d4, #ffffff, #6b7280, #c0c8d4); }
+.bloyi-medal-bronze { background: conic-gradient(from 230deg, #c98e2a, #f5d77a, #8b4513, #c98e2a); }
+
+@keyframes bloyi-medal-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.bloyi-progress-ring {
+  transform: rotate(-90deg);
+}
+
+.bloyi-sev-critical { color: #f87171; background: rgba(248, 113, 113, 0.10); border-color: rgba(248, 113, 113, 0.3); }
+.bloyi-sev-high { color: #fb923c; background: rgba(251, 146, 60, 0.10); border-color: rgba(251, 146, 60, 0.3); }
+.bloyi-sev-medium { color: #fbbf24; background: rgba(251, 191, 36, 0.10); border-color: rgba(251, 191, 36, 0.3); }
+.bloyi-sev-low { color: #60a5fa; background: rgba(96, 165, 250, 0.10); border-color: rgba(96, 165, 250, 0.3); }
+.bloyi-sev-info { color: #94a3b8; background: rgba(148, 163, 184, 0.08); border-color: rgba(148, 163, 184, 0.25); }
+
+.bloyi-tier-platinum { color: #e6f3ff; }
+.bloyi-tier-gold { color: #f5d77a; }
+.bloyi-tier-silver { color: #c0c8d4; }
+.bloyi-tier-bronze { color: #c98e2a; }
+.bloyi-tier-none { color: #6b7280; }
+
+.bloyi-fade-in {
+  animation: bloyi-fade-in 0.5s ease-out;
+}
+@keyframes bloyi-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.bloyi-card-hover {
+  transition: all 0.25s ease;
+}
+.bloyi-card-hover:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px);
+}

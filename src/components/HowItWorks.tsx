@@ -1,10 +1,34 @@
 const steps = [
-  { num: "01", title: "Submit your product", desc: "Fill a short form. Tell us what you've built. No pitch deck." },
-  { num: "02", title: "Discovery call", desc: "A personal call to understand your product and vision." },
-  { num: "03", title: "Sign agreement", desc: "We agree on terms, sign the creator agreement, set up payouts." },
-  { num: "04", title: "Get activated", desc: "Creator account live. Launchbox badge on your product." },
-  { num: "05", title: "Start selling", desc: "Listed under our company. Contracts, invoices, payments — handled." },
-  { num: "06", title: "Track & earn", desc: "Every sale, fee, and payout visible in your dashboard." },
+  {
+    num: "01",
+    title: "Submit your product",
+    desc: "Share your GitHub link, deployment URL, and a plain-English description of what you built. No pitch deck. No investor lingo. Just show us what works.",
+  },
+  {
+    num: "02",
+    title: "Assessment",
+    desc: "Our team reviews your product across 8 domains — code quality, security, authentication, data privacy, governance, support, documentation, and compliance. You get a full findings report, not a score. We tell you exactly what to fix and how.",
+  },
+  {
+    num: "03",
+    title: "Get certified",
+    desc: "Clear the findings, earn the Blyoi Badge. Your product is now officially listed under Blyoi Innovations — a registered Indian company that enterprise buyers can legally contract with. You get an embeddable badge and a verifiable certificate.",
+  },
+  {
+    num: "04",
+    title: "Sign the creator agreement",
+    desc: "We agree on your subscription, commission rate, and exit milestone. One agreement. Plain English. Your code, your product, and your intellectual property stay yours — always. We sign. You countersign. Payouts get configured.",
+  },
+  {
+    num: "05",
+    title: "Start selling",
+    desc: "Your product goes live on the Blyoi marketplace. We pitch it. Contracts get signed under our name. Invoices go out under our GST. Payments land with us. You do none of that.",
+  },
+  {
+    num: "06",
+    title: "Track & exit on your terms",
+    desc: "Every sale, every commission deduction, and every payout is visible in real time. When you hit your revenue milestone — take a happy exit, register your own company, and keep everything you built.",
+  },
 ];
 
 export default function HowItWorks() {
@@ -13,7 +37,7 @@ export default function HowItWorks() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
           <span className="section-label mb-4">Process</span>
-          <h2 className="text-2xl sm:text-3xl font-bold leading-tight">
+          <h2 className="font-display text-5xl sm:text-7xl md:text-8xl leading-[0.9] tracking-tight">
             From code to cash <span className="gradient-text">in six steps.</span>
           </h2>
           <p className="text-sm text-muted mt-2">No bureaucracy. No waiting. Start selling the moment you join.</p>

@@ -1,13 +1,13 @@
 const provisions = [
-  { icon: "🏢", title: "Company Umbrella", desc: "Sell under our registered entity. Contracts & compliance handled." },
-  { icon: "📜", title: "Legal Agreements", desc: "IP, payouts, refunds, SLAs, exit terms — all covered." },
-  { icon: "🛡️", title: "Trust Badge", desc: "Instant credibility with the Launchbox verified badge." },
-  { icon: "💳", title: "Payment Intake", desc: "Clean payment collection through proper banking channels." },
-  { icon: "💰", title: "Payout Ledger", desc: "Every sale, fee, and disbursement visible in real time." },
-  { icon: "🎧", title: "Support Workflow", desc: "Escalation matrix and SLA tracking for every customer." },
-  { icon: "🔒", title: "Trust Pages", desc: "Company-backed pages that give buyers confidence." },
-  { icon: "📊", title: "Creator Dashboard", desc: "Products, sales, workflow stages, payouts — one place." },
-  { icon: "🔗", title: "Launch Promotion", desc: "Amplify your launch through our professional network." },
+  { icon: "🏢", title: "Registered company umbrella", desc: "Sell SaaS, software, and digital products under our incorporated Indian entity — contracts, GST, and compliance handled end-to-end." },
+  { icon: "📜", title: "Enterprise-grade agreements", desc: "Built-in IP assignment, payout schedules, refund policy, SLAs, and exit clauses — drafted to pass procurement and legal review." },
+  { icon: "🛡️", title: "Verified trust badge", desc: "Earn the Blyoi Verified mark — instant credibility for B2B buyers, marketplaces, and enterprise procurement teams." },
+  { icon: "💳", title: "Compliant payment intake", desc: "Accept domestic and international payments through audited banking and PG rails — every transaction reconciled to the rupee." },
+  { icon: "💰", title: "Real-time payout ledger", desc: "Track every sale, platform fee, tax withholding, and disbursement in a transparent, audit-ready ledger." },
+  { icon: "🎧", title: "Customer support workflow", desc: "A defined escalation matrix, ticketing system, and SLA tracking so every buyer complaint resolves on record." },
+  { icon: "🔒", title: "Buyer trust pages", desc: "Company-backed product, refund, and support pages that close the credibility gap for first-time enterprise buyers." },
+  { icon: "📊", title: "Creator command center", desc: "A single dashboard for products, sales, workflow stages, customer tickets, and payouts — built for indie operators." },
+  { icon: "🔗", title: "Launch amplification", desc: "Distribution support across our partner network, marketplaces, and procurement channels to compound your day-one reach." },
 ];
 
 export default function WhatWeProvide() {
@@ -16,7 +16,7 @@ export default function WhatWeProvide() {
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
           <span className="section-label mb-4">What You Get</span>
-          <h2 className="text-2xl sm:text-3xl font-bold leading-tight">
+          <h2 className="font-display text-5xl sm:text-7xl md:text-8xl leading-[0.9] tracking-tight">
             Everything you need to <span className="gradient-text">sell with confidence.</span>
           </h2>
           <p className="text-sm text-muted mt-2 max-w-md mx-auto">

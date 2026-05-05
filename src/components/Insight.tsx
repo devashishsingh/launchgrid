@@ -5,7 +5,7 @@ export default function Insight() {
         <div className="glass-accent rounded-2xl p-10 sm:p-14 relative overflow-hidden">
           <div className="relative z-10">
             <span className="section-label mb-5">The Insight</span>
-            <h2 className="text-2xl sm:text-3xl font-bold leading-tight">
+            <h2 className="font-display text-5xl sm:text-7xl md:text-8xl leading-[0.9] tracking-tight">
               Every product starts as a <span className="gradient-text">calculated bet</span>.
             </h2>
             <p className="mt-4 text-sm text-muted max-w-md mx-auto leading-relaxed">
